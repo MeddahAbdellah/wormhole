@@ -17,10 +17,26 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Store',
+      url: '/store',
+      icon: 'basket'
+    },
+    {
+      title: 'Pickups',
+      url: '/pickups',
+      icon: 'airplane'
+    },
+    {
+      title: 'Collis',
+      url: '/parcels',
+      icon: 'cube'
+    },
+    {
+      title: 'Compte',
+      url: '/account',
+      icon: 'person'
     }
+
   ];
 
   constructor(
