@@ -1,0 +1,39 @@
+:host{
+  width: 90%;
+  padding: 20px;
+  margin: 0;
+  margin-top: 10px;
+}
+.storeCard{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.storeCard h1{
+  font-size: 1.3em;
+}
+.storeCard h5{
+  color: grey;
+  font-size: 0.6em;
+}
+.storeCard h6{
+  margin: 2px;
+  font-size: 0.7em;
+}
+img{
+  width: 90px;
+  height: 90px;
+  margin-right: 20px;
+}
+.productInfo{
+  text-align: left;
+}
+.purchaseInfo{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+}
