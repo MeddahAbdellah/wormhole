@@ -27,12 +27,12 @@ export class AppComponent {
       icon: 'airplane'
     },
     {
-      title: 'Collis',
+      title: 'Parcels',
       url: '/parcels',
       icon: 'cube'
     },
     {
-      title: 'Compte',
+      title: 'Account',
       url: '/account',
       icon: 'person'
     }

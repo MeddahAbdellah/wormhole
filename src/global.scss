@@ -24,3 +24,31 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+ion-content{
+  font-family: 'Quicksand', sans-serif !important;
+}
+ion-infinite-scroll-content{
+  padding-top: 20px;
+}
+ion-label{
+  font-family: 'Quicksand', sans-serif !important;
+}
+.pageDescription{
+  height: 60vw;
+  background: red;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.pageDescription ion-icon{
+  font-size: 10em;
+}
+.pageDescription ion-row{
+  height: 100%;
+}
+.pageDescription img{
+  max-height: 170px;
+}

@@ -1,0 +1,23 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-item *ngFor='let f of fields'>
+    <ion-label>{{f.label}}</ion-label>
+    <ion-datetime *ngIf='f.type=="datetime"' displayFormat="MMM DD, YYYY HH:mm" placeholder="Select Date" [min]="minDate" ></ion-datetime>
+    <ion-input *ngIf='f.type!="datetime" && f.type!="select"' type="f.type" class="ion-text-end"></ion-input>
+    <ion-select *ngIf='f.type=="select"' placeholder="Select {{f.label}}">
+      <ion-select-option *ngFor="let s of f.options" value="s">{{s}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <ion-button position="bottom" expand="block" color="primary" (click)="dismissModal()">New Pickup</ion-button>
+  </ion-toolbar>
+</ion-footer>

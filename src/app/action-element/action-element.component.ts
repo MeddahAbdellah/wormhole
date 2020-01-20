@@ -14,26 +14,19 @@ export class ActionElementComponent implements OnInit {
   @Input() deliveryCost:string;
   @Input() productCost:string;
 
-  buttonsObject: object ={
+  buttonsObject: any ={
     header: 'Action',
-    buttons: [{
-      text: 'Delete',
-      role: 'destructive',
-      icon: 'trash',
+    buttons: [ {
+      text: 'Buy',
+      icon: 'cash',
       handler: () => {
-        console.log('Delete clicked');
+        console.log('Buy clicked');
       }
     }, {
-      text: 'Share',
-      icon: 'share',
+      text: 'add to basket',
+      icon: 'basket',
       handler: () => {
-        console.log('Share clicked');
-      }
-    }, {
-      text: 'Play (open modal)',
-      icon: 'arrow-dropright-circle',
-      handler: () => {
-        console.log('Play clicked');
+        console.log('Add to Basket clicked');
       }
     }, {
       text: 'Favorite',
@@ -54,6 +47,7 @@ export class ActionElementComponent implements OnInit {
   ngOnInit(){
   }
   async presentActionSheet() {
+
     const actionSheet = await this.actionSheetController.create(this.buttonsObject);
     await actionSheet.present();
   }

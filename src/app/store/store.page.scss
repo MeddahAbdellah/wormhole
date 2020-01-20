@@ -4,3 +4,9 @@
   flex-flow: column;
   align-items: center;
 }
+ion-content{
+    font-family: 'Quicksand', sans-serif;
+}
+ion-infinite-scroll-content{
+  padding: 0;
+}

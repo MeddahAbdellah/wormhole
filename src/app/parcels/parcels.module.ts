@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 
-import { ListPage } from './list.page';
+import { IonicModule } from '@ionic/angular';
+
+import { ParcelsPageRoutingModule } from './parcels-routing.module';
+
+import { ParcelsPage } from './parcels.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: ListPage
-      }
-    ])
+    ParcelsPageRoutingModule
   ],
-  declarations: [ListPage]
+  declarations: [ParcelsPage]
 })
-export class ListPageModule {}
+export class ParcelsPageModule {}

@@ -11,26 +11,15 @@
 
 <ion-content>
   <ion-col class="storeContainer">
-    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content
-        pullingIcon="arrow-dropdown"
-        pullingText="Pull to refresh"
-        refreshingSpinner="circles"
-        refreshingText="Refreshing...">
-      </ion-refresher-content>
-    </ion-refresher>
-    <ion-item>
-      <ion-label position="floating">Search...</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+    <ion-searchbar animated></ion-searchbar>
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
       class="ion-align-items-center"
       loadingSpinner="bubbles"
       loadingText="Loading more data...">
       <app-action-element [imgSrc]="'https://images-na.ssl-images-amazon.com/images/I/81SiAXigphL._SL1500_.jpg'" [title]="'Estompe'" [description]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '" [deliveryDate]="'22/01/2020'" [deliveryCost]="'3.45$'" [productCost]="'15.44$'"></app-action-element>
-      <app-action-element [imgSrc]="'https://images-na.ssl-images-amazon.com/images/I/81SiAXigphL._SL1500_.jpg'" [title]="'Crayons'" [description]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '" [deliveryDate]="'22/01/2020'" [deliveryCost]="'3.45$'" [productCost]="'15.44$'"></app-action-element>
-      <app-action-element [imgSrc]="'https://images-na.ssl-images-amazon.com/images/I/81SiAXigphL._SL1500_.jpg'" [title]="'Gommes'" [description]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '" [deliveryDate]="'22/01/2020'" [deliveryCost]="'3.45$'" [productCost]="'15.44$'"></app-action-element>
+      <app-action-element [imgSrc]="'https://images-na.ssl-images-amazon.com/images/I/71GWJXGeZsL._SL1500_.jpg'" [title]="'Ps4 Noir'" [description]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '" [deliveryDate]="'23/01/2020'" [deliveryCost]="'10.45$'" [productCost]="'290.44$'"></app-action-element>
+      <app-action-element [imgSrc]="'https://images-na.ssl-images-amazon.com/images/I/61JpVuvZbjL._SL1200_.jpg'" [title]="'Casque Bluetooth'" [description]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '" [deliveryDate]="'24/01/2020'" [deliveryCost]="'6.45$'" [productCost]="'30.44$'"></app-action-element>
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-col>
