@@ -1,0 +1,44 @@
+.loginPageContent{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 100vw;
+}
+img{
+  width: 50vw;
+}
+h1{
+  font-size: 6em;
+  color: #2196F3 ;
+  padding-bottom: 30px;
+}
+h6 {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #D7DBDD ;
+   line-height: 0.1em;
+   font-size: 1em;
+   margin: 10px 0 20px;
+}
+
+h6 span {
+    background:#fff;
+    padding:0 10px;
+}
+ion-button{
+  margin-top: 40px;
+  --background:#2196F3;
+}
+ion-title,ion-icon{
+  --color:#2196F3;
+  color:#2196F3;
+}
+ion-footer ion-toolbar ion-title{
+  color:#ABB2B9;
+  text-align: center;
+}
+#signup{
+  color:#2E4053;
+}

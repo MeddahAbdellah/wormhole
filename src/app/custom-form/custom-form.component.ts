@@ -8,9 +8,10 @@ import { NavParams } from '@ionic/angular';
 })
 export class CustomFormComponent implements OnInit {
   @Input() title:string;
-  @Input() fileds:Array<Object>;
+  @Input() fields:Array<Object>;
   startDate : any;
   minDate : any;
+  modal : any;
   constructor(navParams: NavParams) {
     this.startDate = new Date().toISOString();
     this.minDate = new Date().toISOString();

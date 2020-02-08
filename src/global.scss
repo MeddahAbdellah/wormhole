@@ -52,3 +52,10 @@ ion-label{
 .pageDescription img{
   max-height: 170px;
 }
+.loginBg {
+  background-image: url('./assets/login_bg.jpeg');
+  -webkit-background-image: url('./assets/login_bg.jpeg');
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}

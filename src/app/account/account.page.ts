@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.page.scss'],
 })
 export class AccountPage implements OnInit {
-  fields: Array<Object>;
+  fields: any;
   keys:any;
   constructor() { }
 

@@ -1,5 +1,7 @@
 {
   "name": "wormhole",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

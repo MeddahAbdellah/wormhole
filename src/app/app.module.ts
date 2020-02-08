@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DetailsModalComponent } from './details-modal/details-modal.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent,DetailsModalComponent,CustomFormComponent],
@@ -18,7 +18,8 @@ import { CustomFormComponent } from './custom-form/custom-form.component';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

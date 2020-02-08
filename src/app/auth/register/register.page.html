@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="loginPageContent">
+    <h1>Kamui</h1>
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="floating" >Email</ion-label>
+        <ion-input #mail></ion-input>
+      </ion-item>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="floating" >Phone</ion-label>
+        <ion-input type="number"#phone></ion-input>
+      </ion-item>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="floating" >Mot de passe</ion-label>
+        <ion-input [type]="showPasswordText" #password></ion-input>
+        <ion-icon slot="end" name="eye" (click)="togglePassword()"> </ion-icon>
+      </ion-item>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-button position="bottom" expand="block" (click)="subscribe(mail.value,password.value,phone.value)">S'inscrire</ion-button>
+    </ion-toolbar>
+    <ion-toolbar>
+      <h6><span>OR</span></h6>
+    </ion-toolbar>
+
+    <ion-item mode="ios" lines="none" (click)="googleConnect()">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      <ion-title size="small">Continuer avec google</ion-title>
+    </ion-item>
+  </div>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <ion-title size="small">Vous avez un compte? <span id="signup" routerLink="/login" id="signup">Connectez vous!</span> </ion-title>
+  </ion-toolbar>
+</ion-footer>

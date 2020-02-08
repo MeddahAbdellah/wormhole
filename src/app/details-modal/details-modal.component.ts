@@ -8,6 +8,7 @@ import { NavParams } from '@ionic/angular';
 export class DetailsModalComponent implements OnInit {
   @Input() fields: Array<Object>;
   keys:any;
+  modal:any;
   constructor(navParams: NavParams) {
   }
 

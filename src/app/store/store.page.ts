@@ -14,7 +14,9 @@ export class StorePage implements OnInit {
 
   loadData(event){
     console.log('Loading Data');
-
+  }
+  intrested(state){
+    console.log(state);
   }
 
 }
