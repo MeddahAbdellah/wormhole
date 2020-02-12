@@ -11,33 +11,55 @@ import { CustomFormComponent } from '../custom-form/custom-form.component';
 export class PickupsPage implements OnInit {
   pickups: Array<Object>;
   constructor(public modalController: ModalController) {
-    this.pickups = [{flightDate:'22/01/2020',ticketId:"KL417DMS",volume:10,weight:2,flightDeparture:"Paris",flightDestination:"Alger"},
-                    {flightDate:'13/05/2020',ticketId:"KL417DMS",volume:10,weight:2,flightDeparture:"Paris",flightDestination:"Alger"}];
+    this.getPickups();
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+  cancel(p){// TODO: SERVICE
+    console.log("Cancelling pickup: "+p.pickup_id);
   }
-  cancel(id){
-    console.log("Cancelling: "+id);
-  }
-  async details(p){
+  async details(p,button){
+    let self = this;
     const modal = await this.modalController.create({
       component: DetailsModalComponent,
       componentProps: {
-      'fields' : p
+      'fields' : p,
+      'modalName':"Pickup",
+      'button':button
       }
     });
     return await modal.present();
     }
   async newPickup(){
+    let self = this;
     const form = await this.modalController.create({
       component: CustomFormComponent,
       componentProps: {
         'title': "Earn Money On Your Next Flight",
-        'fields': [{label:'Flight Date',type:"datetime"},{label:'Flight Departure',type:"select",options:["Paris ORY","Paris CDG","ALG"]},{label:'Flight Destination',type:"select",options:["Paris ORY","Paris CDG","ALG"]},{label:'Volume',type:"number"},{label:'Weight',type:"number"},{label:'Flight Ticket',type:"text"}]
+        'fields':self.getAvailablePickups(0),
+        'formName':'Pickup',
+        'loadCallbackFunction':function(){self.loadParcels()}
       }
     });
     return await form.present();
   }
-
+  getAvailablePickups(index){// TODO: SERVICE
+    let self = this;
+    return [{label:'Lettre',type:'button',cost:'20$',callback:function(id){self.getParcelDetails(id);},id:'KAMASDZA'}];
+  }
+  getPickups(){ // TODO: SERVICE
+    this.pickups = [{pickup_id:"KKSDAZEM",colis_reçu:"Oui",date_du_vol:'22/01/2020',Liverer_a:"Karim",Numero_du_destinataire:"+213555547789",volume_en_cm2:10,poids_en_kg:2,Livraison_de:"Paris",Livraison_a:"Alger"},
+                    {pickup_id:"PSPDAZEM",colis_reçu:"Non",date_du_vol:'03/05/2020',Liverer_a:"Nadia",Numero_du_destinataire:"+213555547789",volume_en_cm2:10,poids_en_kg:2,Livraison_de:"Paris",Livraison_a:"Alger"}];
+  }
+  async getParcelDetails(id){// TODO: SERVICE
+    let self = this;
+    let parcel = {parcel_id:"QSMDAZEM",Colis_remis:"Oui",date_de_deposition_du_colis:"13/03/2020",date_de_livraison:'19/03/2020',Nom_du_livreur:"Fateh",Numero_du_livreur:"+3322154785",Livraison_de:"Paris",Livraison_a:"Alger"};
+    this.details(parcel,{text:'Prendre le Colis',callback:function(id){self.takeParcel(id)},color:'primary'});
+  }
+  loadParcels(){// TODO: SERVICE
+    console.log("Loading Parcels");
+  }
+  takeParcel(id){// TODO: SERVICE
+    console.log("taking parcel "+id);
+  }
 }

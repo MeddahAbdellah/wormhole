@@ -53,11 +53,11 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.storage.get('user_id').then((userId) => {
-        if(userId===null)this.router.navigateByUrl('/login');
-        else{
+        /////if(userId===null)this.router.navigateByUrl('/login'); TEST
+        /////else{
           this.statusBar.styleDefault();
           this.splashScreen.hide();
-        }
+        /////}
       });
     });
   }

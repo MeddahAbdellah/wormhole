@@ -1,14 +1,19 @@
 <ion-header translucent>
-    <ion-toolbar>
-      <ion-title>Pickup Details</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="dismissModal()">Close</ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content fullscreen>
-    <ion-item *ngFor="let k of keys">
-      <ion-label > {{k}} </ion-label>
-      <ion-label color="dark" mode="ios" class="ion-text-end" >{{fields[k]}}</ion-label>
-    </ion-item>
-  </ion-content>
+  <ion-toolbar>
+    <ion-title>{{modalName}} Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-item *ngFor="let k of filterItemsOfType('_id')">
+      <ion-label> {{k.toString().split('_').join(' ')}} </ion-label>
+      <ion-label  color="dark" mode="ios" class="ion-text-end" >{{fields[k]}}</ion-label>
+  </ion-item>
+</ion-content>
+<ion-footer no-shadow *ngIf="button !== undefined">
+  <ion-toolbar position="bottom">
+    <ion-button position="bottom" expand="block" color="{{button.color}}" (click)="submitModal(fields['parcel_id'])">{{button.text}}</ion-button>
+  </ion-toolbar>
+</ion-footer>

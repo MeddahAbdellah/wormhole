@@ -11,7 +11,7 @@ export class AccountPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.fields={Name:"Daoud",Surname:"Chekebkeb",Status:"Postman",Review:"4.9/5",AccountBalance:"221.23$"}
+    this.fields={Name:"Daoud Chekebkeb",Status:"Trusted",Email:"Daoud.Chekebkeb@gmail.com",Phone:"+33068528565"}
     this.keys = Object.keys(this.fields);
   }
 

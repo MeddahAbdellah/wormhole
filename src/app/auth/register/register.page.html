@@ -1,17 +1,25 @@
 <ion-content>
   <div class="loginPageContent">
     <h1>Kamui</h1>
+
     <ion-toolbar>
       <ion-item>
-        <ion-label position="floating" >Email</ion-label>
-        <ion-input #mail></ion-input>
+        <ion-label position="floating" >Name</ion-label>
+        <ion-input #name></ion-input>
+      </ion-item>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="floating"  >Email</ion-label>
+        <ion-input pattern="email" #email></ion-input>
       </ion-item>
     </ion-toolbar>
 
     <ion-toolbar>
       <ion-item>
         <ion-label position="floating" >Phone</ion-label>
-        <ion-input type="number"#phone></ion-input>
+        <ion-input type="number" pattern="/(7\d|8\d|9\d)\d{9}$/" inputmode="tel" #phone></ion-input>
       </ion-item>
     </ion-toolbar>
 
@@ -24,7 +32,7 @@
     </ion-toolbar>
 
     <ion-toolbar>
-      <ion-button position="bottom" expand="block" (click)="subscribe(mail.value,password.value,phone.value)">S'inscrire</ion-button>
+      <ion-button position="bottom" expand="block" (click)="subscribe(name.value,email.value,password.value,phone.value)">S'inscrire</ion-button>
     </ion-toolbar>
     <ion-toolbar>
       <h6><span>OR</span></h6>

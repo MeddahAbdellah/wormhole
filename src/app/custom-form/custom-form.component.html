@@ -7,17 +7,28 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen>
-  <ion-item *ngFor='let f of fields'>
-    <ion-label>{{f.label}}</ion-label>
-    <ion-datetime *ngIf='f.type=="datetime"' displayFormat="MMM DD, YYYY HH:mm" placeholder="Select Date" [min]="minDate" ></ion-datetime>
-    <ion-input *ngIf='f.type!="datetime" && f.type!="select"' type="f.type" class="ion-text-end"></ion-input>
-    <ion-select *ngIf='f.type=="select"' placeholder="Select {{f.label}}">
-      <ion-select-option *ngFor="let s of f.options" value="s">{{s}}</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadCallback($event)">
+  <ion-infinite-scroll-content
+    class="ion-align-items-spacebetween"
+    loadingSpinner="bubbles"
+    loadingText="Loading...">
+    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+      <ion-item *ngFor='let f of fields'>
+        <ion-icon *ngIf='f.type=="button"' slot="start" name="{{parcelsIcons[f.label]}}"></ion-icon>
+        <ion-label>{{f.label}}</ion-label>
+        <ion-datetime *ngIf='f.type=="datetime"' displayFormat="MMM DD, YYYY HH:mm" placeholder="Select Date" [min]="minDate" [(ngModel)]="f.value" [name]="f.label"></ion-datetime>
+        <ion-input *ngIf='f.type!="datetime" && f.type!="select" && f.type!="button"' type="f.type" class="ion-text-end"  [(ngModel)]="f.value" [name]="f.label"></ion-input>
+        <ion-select *ngIf='f.type=="select"' placeholder="Select {{f.label}}" [(ngModel)]="f.value" [name]="f.label">
+          <ion-select-option *ngFor="let s of f.options" value="s">{{s}}</ion-select-option>
+        </ion-select>
+        <ion-button *ngIf='f.type=="button"' color="primary" class="ion-text-end" (click)="f.callback(f.id)">{{f.cost}}</ion-button>
+      </ion-item>
+    </form>
+  </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
-<ion-footer no-shadow>
+<ion-footer no-shadow *ngIf="button !== undefined">
   <ion-toolbar position="bottom">
-    <ion-button position="bottom" expand="block" color="primary" (click)="dismissModal()">New Pickup</ion-button>
+    <ion-button position="bottom" expand="block" color="{{button.color}}" (click)="form.ngSubmit.emit()">{{button.text}}</ion-button>
   </ion-toolbar>
 </ion-footer>

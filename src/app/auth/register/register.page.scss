@@ -42,3 +42,13 @@ ion-footer ion-toolbar ion-title{
 #signup{
   color:#2E4053;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+ion-select{
+  width: 20px;
+}

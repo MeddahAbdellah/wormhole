@@ -16,7 +16,7 @@
     </ion-row>
   </ion-content>
   <ion-item *ngFor="let k of keys" >
-    <ion-label > {{k}} </ion-label>
+    <ion-label > {{k.toString().split('_').join(' ')}} </ion-label>
     <ion-label color="primary" mode="ios" class="ion-text-end" >{{fields[k]}}</ion-label>
   </ion-item>
 </ion-content>
